@@ -1,4 +1,4 @@
-# React Wines 103
+# React Wines 103 bis
 
 This is the result of the [React 103 Workshop](https://github.com/react-bootcamp/react-103)
 
