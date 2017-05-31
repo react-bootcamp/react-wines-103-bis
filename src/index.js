@@ -4,8 +4,9 @@ import Symbol from 'es-symbol';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import thunk from 'redux-thunk';
+import { combineReducers } from 'redux';
 import { Provider } from 'react-redux';
-import { reducer } from './reducers';
+import { reducers } from './reducers';
 import { createStore, applyMiddleware } from 'redux';
 import createHistory from 'history/createBrowserHistory'
 import { ConnectedRouter, routerReducer, routerMiddleware, push } from 'react-router-redux'
@@ -17,7 +18,7 @@ if (!window.Symbol) {
 }
 
 const root = window.location.hostname === 'react-bootcamp.github.io'
-  ? '/react-wines-102-bis/'
+  ? '/react-wines-103-bis/'
   : '/';
 const history = createHistory()
 const middleware = routerMiddleware(history)
@@ -26,13 +27,13 @@ const store = createStore(
     ...reducers,
     router: routerReducer
   }),
-  applyMiddleware(middleware)
+  applyMiddleware(middleware, thunk)
 );
 
 ReactDOM.render((
   <Provider store={store}>
-    <Router basename={root}>
+    <ConnectedRouter basename={root} history={history}>
       <WineApp />
-    </Router>
+    </ConnectedRouter>
   </Provider>
 ), document.getElementById('root'));

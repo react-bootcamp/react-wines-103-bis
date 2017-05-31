@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withRouter, Route, Link, Switch } from 'react-router-dom';
+import { withRouter, Route, Switch } from 'react-router-dom';
 import { RegionsPage, WineListPage, WinePage, NotFound } from '.';
 
 class _WineApp extends Component {
