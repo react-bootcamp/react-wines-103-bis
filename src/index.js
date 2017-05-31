@@ -9,8 +9,8 @@ import { Provider } from 'react-redux';
 import { reducers } from './reducers';
 import { createStore, applyMiddleware } from 'redux';
 import createHistory from 'history/createBrowserHistory'
-import { ConnectedRouter, routerReducer, routerMiddleware, push } from 'react-router-redux'
-import { WineApp, RegionsPage, WineListPage, WinePage, NotFound } from './components';
+import { ConnectedRouter, routerReducer, routerMiddleware } from 'react-router-redux'
+import { WineApp } from './components';
 import './index.css';
 
 if (!window.Symbol) {
