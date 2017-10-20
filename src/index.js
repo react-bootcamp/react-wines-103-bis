@@ -8,7 +8,7 @@ import { combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 import { reducers } from './reducers';
 import { createStore, applyMiddleware } from 'redux';
-import createHistory from 'history/createBrowserHistory'
+import createHistory from 'history/createBrowserHistory';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { WineApp } from './components';
 import './index.css';
@@ -17,19 +17,16 @@ if (!window.Symbol) {
   window.Symbol = Symbol; // yeah, polyfill all the things !!!
 }
 
-const root = window.location.hostname === 'react-bootcamp.github.io'
-  ? '/react-wines-103-bis/'
-  : '/';
+const root =
+  window.location.hostname === 'react-bootcamp.github.io' ? '/react-wines-103-bis/' : '/';
 
-const store = createStore(
-  combineReducers({ ...reducers }),
-  applyMiddleware(thunk)
-);
+const store = createStore(combineReducers({ ...reducers }), applyMiddleware(thunk));
 
-ReactDOM.render((
+ReactDOM.render(
   <Provider store={store}>
     <Router basename={root}>
       <WineApp />
     </Router>
-  </Provider>
-), document.getElementById('root'));
+  </Provider>,
+  document.getElementById('root')
+);
