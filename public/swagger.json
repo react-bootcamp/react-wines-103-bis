@@ -5,15 +5,23 @@
         "version": "1.0.0",
         "description": "Wines API"
     },
-    "host": "wines-api.herokuapp.com",
-    "basePath":"/api",
-    "schemes":["https"],
+    "host": "wines-api.onrender.com",
+    "basePath": "/api",
+    "schemes": [
+        "https"
+    ],
     "paths": {
         "/comments": {
             "get": {
-                "tags": ["Comments"],
-                "consumes": ["application/json"],
-                "produces": ["application/json"],
+                "tags": [
+                    "Comments"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
                 "parameters": [],
                 "responses": {
                     "200": {
@@ -30,9 +38,15 @@
         },
         "/likes": {
             "get": {
-                "tags": ["Likes"],
-                "consumes": ["application/json"],
-                "produces": ["application/json"],
+                "tags": [
+                    "Likes"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
                 "parameters": [],
                 "responses": {
                     "200": {
@@ -49,9 +63,15 @@
         },
         "/regions": {
             "get": {
-                "tags": ["Regions"],
-                "consumes": ["application/json"],
-                "produces": ["application/json"],
+                "tags": [
+                    "Regions"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
                 "parameters": [],
                 "responses": {
                     "200": {
@@ -68,16 +88,24 @@
         },
         "/wines/{id}": {
             "get": {
-                "tags": ["Wines"],
-                "consumes": ["application/json"],
-                "produces": ["application/json"],
-                "parameters": [{
-                    "name": "id",
-                    "in": "path",
-                    "required": true,
-                    "type": "string",
-                    "description": "the id of the wine "
-                }],
+                "tags": [
+                    "Wines"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string",
+                        "description": "the id of the wine "
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "successful operation",
@@ -93,16 +121,24 @@
         },
         "/wines?region={region}": {
             "get": {
-                "tags": ["Wines"],
-                "consumes": ["application/json"],
-                "produces": ["application/json"],
-                "parameters": [{
-                    "name": "region",
-                    "in": "path",
-                    "required": true,
-                    "type": "string",
-                    "description": "the region to get wines from "
-                }],
+                "tags": [
+                    "Wines"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "region",
+                        "in": "path",
+                        "required": true,
+                        "type": "string",
+                        "description": "the region to get wines from "
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "successful operation",
@@ -118,35 +154,52 @@
         },
         "/wines/{id}/comments": {
             "post": {
-                "tags": ["Wines"],
-                "consumes": ["application/json"],
-                "produces": ["application/json"],
-                "parameters": [{
-                    "name": "id",
-                    "in": "path",
-                    "required": true,
-                    "type": "string",
-                    "description": "the id of the wine "
-                }, {
-                    "in": "body",
-                    "name": "body",
-                    "required": true,
-                    "schema": {
-                        "$ref": "#/definitions/Comment"
+                "tags": [
+                    "Wines"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string",
+                        "description": "the id of the wine "
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Comment"
+                        }
                     }
-                }]
+                ]
             },
             "get": {
-                "tags": ["Wines"],
-                "consumes": ["application/json"],
-                "produces": ["application/json"],
-                "parameters": [{
-                    "name": "id",
-                    "in": "path",
-                    "required": true,
-                    "type": "string",
-                    "description": "the id of the wine "
-                }],
+                "tags": [
+                    "Wines"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string",
+                        "description": "the id of the wine "
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "successful operation",
@@ -162,49 +215,74 @@
         },
         "/wines/{id}/image": {
             "get": {
-                "tags": ["Wines"],
-                "consumes": ["application/json"],
-                "produces": ["application/json"],
-                "parameters": [{
-                    "name": "id",
-                    "in": "path",
-                    "required": true,
-                    "type": "string",
-                    "description": "the id of the wine "
-                }]
+                "tags": [
+                    "Wines"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string",
+                        "description": "the id of the wine "
+                    }
+                ]
             }
         },
         "/wines/{id}/like": {
             "post": {
-                "tags": ["Wines"],
-                "consumes": ["application/json"],
-                "produces": ["application/json"],
-                "parameters": [{
-                    "name": "id",
-                    "in": "path",
-                    "required": true,
-                    "type": "string",
-                    "description": "the id of the wine "
-                }, {
-                    "in": "body",
-                    "name": "body",
-                    "required": true,
-                    "schema": {
-                        "$ref": "#/definitions/Like"
+                "tags": [
+                    "Wines"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string",
+                        "description": "the id of the wine "
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Like"
+                        }
                     }
-                }]
+                ]
             },
             "get": {
-                "tags": ["Wines"],
-                "consumes": ["application/json"],
-                "produces": ["application/json"],
-                "parameters": [{
-                    "name": "id",
-                    "in": "path",
-                    "required": true,
-                    "type": "string",
-                    "description": "the id of the wine "
-                }],
+                "tags": [
+                    "Wines"
+                ],
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "type": "string",
+                        "description": "the id of the wine "
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "successful operation",
@@ -234,7 +312,10 @@
                     }
                 }
             },
-            "required": ["count", "regions"]
+            "required": [
+                "count",
+                "regions"
+            ]
         },
         "By_Id": {
             "properties": {
@@ -263,7 +344,13 @@
                     }
                 }
             },
-            "required": ["id", "name", "type", "appellation", "grapes"]
+            "required": [
+                "id",
+                "name",
+                "type",
+                "appellation",
+                "grapes"
+            ]
         },
         "appellation": {
             "properties": {
@@ -276,7 +363,10 @@
                     "description": "Region of the appellation "
                 }
             },
-            "required": ["name", "region"]
+            "required": [
+                "name",
+                "region"
+            ]
         },
         "By_Region": {
             "properties": {
@@ -292,7 +382,10 @@
                     }
                 }
             },
-            "required": ["region", "wines"]
+            "required": [
+                "region",
+                "wines"
+            ]
         },
         "wines": {
             "properties": {
@@ -321,7 +414,13 @@
                     }
                 }
             },
-            "required": ["id", "name", "type", "appellation", "grapes"]
+            "required": [
+                "id",
+                "name",
+                "type",
+                "appellation",
+                "grapes"
+            ]
         },
         "wines.appellation": {
             "properties": {
@@ -334,7 +433,10 @@
                     "description": "Region of the appellation "
                 }
             },
-            "required": ["name", "region"]
+            "required": [
+                "name",
+                "region"
+            ]
         },
         "Comment": {
             "properties": {
@@ -351,7 +453,11 @@
                     "description": "content of the comment. "
                 }
             },
-            "required": ["id", "title", "content"]
+            "required": [
+                "id",
+                "title",
+                "content"
+            ]
         },
         "Comments": {
             "properties": {
@@ -372,7 +478,12 @@
                     "description": "the comment "
                 }
             },
-            "required": ["id", "date", "title", "content"]
+            "required": [
+                "id",
+                "date",
+                "title",
+                "content"
+            ]
         },
         "Image": {
             "properties": {
@@ -381,7 +492,9 @@
                     "description": "the id of the wine "
                 }
             },
-            "required": ["id"]
+            "required": [
+                "id"
+            ]
         },
         "Like": {
             "properties": {
@@ -394,7 +507,10 @@
                     "description": "indicates if the current user likes the wine "
                 }
             },
-            "required": ["id", "like"]
+            "required": [
+                "id",
+                "like"
+            ]
         },
         "Liked__": {
             "properties": {
@@ -407,7 +523,10 @@
                     "description": "indicates if the current user likes the wine "
                 }
             },
-            "required": ["id", "like"]
+            "required": [
+                "id",
+                "like"
+            ]
         }
     }
 }

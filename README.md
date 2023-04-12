@@ -1,6 +1,6 @@
-# React Wines 103 bis
+This repository is a clone of [react-wines-103-bis](https://react-bootcamp/react-wines-103-bis)
 
-This is the result of the [React 103 Workshop](https://github.com/react-bootcamp/react-103)
+# React Wines 103 bis
 
 ## Run
 

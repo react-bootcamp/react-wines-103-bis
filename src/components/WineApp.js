@@ -25,12 +25,8 @@ class _WineApp extends Component {
         <h1 className="center-align">Open Wine Database</h1>
         <div className="center-align">
           You can read the Wines API documentation at{' '}
-          <a href="https://bit.ly/rbw-api" target="_blank">
-            https://wines-api.herokuapp.com
-          </a>{' '}
-          and try it{' '}
-          <a href="https://bit.ly/rbw-api-swag" target="_blank">
-            here
+          <a href="https://wines-api.onrender.com" target="_blank">
+            https://wines-api.onrender.com
           </a>
         </div>
         {displayButton && (
